@@ -18,7 +18,7 @@ export default function BlogPage() {
       </ul>
 
       
-        {posts.map((post) => {
+        {/* {posts.map((post) => {
           let catArr: string[] = [] 
           if (!(catArr.includes({post.catslug}))) {
             catArr.push({post.catslug})
@@ -31,7 +31,7 @@ export default function BlogPage() {
               <Link href={`/blog/categories/${catArr[i]}`}>catArr[i]</Link>
             </li>
             
-        ) } } ) }
+        ) } } ) } */}
         
       
 

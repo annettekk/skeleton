@@ -1,12 +1,18 @@
 
 import Link from 'next/link'
 import styles from './page.module.css'
+import Image from "next/image";
+import { Roboto, Poppins } from "next/font/google";
+
+const roboto = Roboto({ subsets: ["latin"], weight: ["900"] });
+const poppins = Poppins({ subsets: ["latin"], weight: [ "900"] });
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <h1><Link href={"/blog"}>My posts</Link></h1>
-      <p>Welcome to my Dance Blog</p>
+      <h1 className="text-2xl {poppins.className} hover:text-yellow-400"><Link href={"/blog"}>My posts</Link></h1>
+      <Image src="/dance-blog.jpg" alt="dance-blog-image" width={400} height={225} />
+      <p className="text-2xl {roboto.className}">Welcome to my Dance Blog</p>
     </main>
   )
 }

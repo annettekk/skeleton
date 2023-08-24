@@ -109,3 +109,12 @@ a {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.blog-content a{
+color: lightseagreen;
+text-decoration: none
+}
+
+.blog-content {
+color: white
+}

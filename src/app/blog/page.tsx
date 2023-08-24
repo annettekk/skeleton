@@ -13,7 +13,7 @@ export default async function BlogPage() {
 
   return (
     <div>
-      <h2>My Posts</h2>
+      {/* <h2>My Posts</h2> */}
       <ul>
         {posts.map((post) => {
           return (

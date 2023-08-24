@@ -34,7 +34,7 @@ export default async function BlogPost({ params }: BlogPostParams) {
       <h1>{post.title}</h1>
       <p>{post.date}</p>
       <p>This post has been viewed {pageViews} times</p>
-      <div dangerouslySetInnerHTML={{ __html: post.body.html }} ></div>
+      <div className="blog-content prose dark:prose-invert" dangerouslySetInnerHTML={{ __html: post.body.html }} ></div>
     {/* @ts-ignore */}
     <Comments slug={params.slug} />
     </div>

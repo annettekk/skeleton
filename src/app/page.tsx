@@ -10,9 +10,9 @@ const poppins = Poppins({ subsets: ["latin"], weight: [ "900"] });
 export default function Home() {
   return (
     <main className={styles.main}>
-      <h1 className="text-2xl {poppins.className} hover:text-yellow-400"><Link href={"/blog"}>My posts</Link></h1>
+      <h1 className="m-8 text-2xl {poppins.className} hover:text-yellow-400"><Link href={"/blog"}>My posts</Link></h1>
       <Image src="/dance-blog.jpg" alt="dance-blog-image" width={400} height={225} />
-      <p className="text-2xl {roboto.className}">Welcome to my Dance Blog</p>
+      <p className="m-8 text-2xl {roboto.className}">Welcome to my Dance Blog</p>
     </main>
   )
 }

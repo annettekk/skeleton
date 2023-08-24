@@ -1,6 +1,6 @@
 ---
-title: My Second Post
+title: Charleston
 date: 2023-08-19
 ---
 
-[Charleston](https://www.youtube.com/watch?v=KFvaSGdFfy8)
+[Charleston video](https://www.youtube.com/watch?v=KFvaSGdFfy8)

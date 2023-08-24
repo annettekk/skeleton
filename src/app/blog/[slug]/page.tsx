@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import kv from "@vercel/kv"
 import { Metadata } from "next";
 import Link from "next/link";
+import Date from '@/components/date';
 
 type BlogPostParams = {
   params: {
@@ -27,13 +28,13 @@ export default async function BlogPost({ params }: BlogPostParams) {
   }
 
   return (
-    <div >
-      <nav>
+    <div className="m-8">
+      <nav className="hover:text-yellow-400 my-4">
       <Link href={"/blog"}>View all posts</Link>
       </nav>
-      <h1>{post.title}</h1>
-      <p>{post.date}</p>
-      <p>This post has been viewed {pageViews} times</p>
+      <h1 className="my-4 text-blue-400 font-bold text-lg">{post.title}</h1>
+      <p className="my-4 text-sm"><Date dateString={post.date} /></p>
+      <p className="my-4">This post has been viewed {pageViews} times</p>
       <div className="blog-content prose dark:prose-invert" dangerouslySetInnerHTML={{ __html: post.body.html }} ></div>
     {/* @ts-ignore */}
     <Comments slug={params.slug} />

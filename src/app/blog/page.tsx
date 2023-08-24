@@ -12,12 +12,12 @@ export default async function BlogPage() {
  
 
   return (
-    <div>
+    <div className = "flex ">
       {/* <h2>My Posts</h2> */}
-      <ul>
+      <ul className = "m-4 leading-loose text-xl">
         {posts.map((post) => {
           return (
-            <li key={post.slug}>
+            <li className="hover:text-yellow-400 my-2" key={post.slug}>
               <Link href={`/blog/${post.slug}`}>{post.title}</Link>
             </li>
           );

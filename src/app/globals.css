@@ -112,9 +112,12 @@ a {
 
 .blog-content a{
 color: lightseagreen;
-text-decoration: none
+text-decoration: none;
+font-size: medium;
+font-weight: 600;
 }
 
 .blog-content {
-color: white
+color: white;
+font-size: small;
 }

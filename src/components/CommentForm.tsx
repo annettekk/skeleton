@@ -56,7 +56,7 @@ export default function CommentForm({ slug, username }: { slug: string; username
       <textarea name="comment" cols={30} rows={10} className="text-black border-2 border-grey-400" required />
       <br />
       <br />
-      <button type="submit" disabled={isPending}>
+      <button className="py-1 px-2 font-bold bg-blue-600 rounded-lg hover:bg-blue-500" type="submit" disabled={isPending}>
         {isPending ? "Sending..." : "Send Comment"}
       </button>
     </form>

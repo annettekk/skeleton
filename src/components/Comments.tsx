@@ -20,7 +20,7 @@ export default async function Comments({ slug }: { slug: string }) {
       {/* @ts-ignore */}
       {user? <CommentForm slug={slug} username={user.username}/> : <Link href={`/sign-in?redirect=/blog/${slug}`}><p>Please sign in to comment</p></Link>}
 
-      <h3 className="my-4 text-blue-400 font-bold ">Comments</h3>
+      <h3 className="mt-8 text-blue-400 font-bold ">Comments:</h3>
       <ul>
         {/* @ts-ignore */}
         {comments.map((comment) => {

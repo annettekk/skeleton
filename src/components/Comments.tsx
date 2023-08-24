@@ -18,7 +18,7 @@ export default async function Comments({ slug }: { slug: string }) {
   return (
     <div>
       {/* @ts-ignore */}
-      {user? <CommentForm slug={slug} username={user.username}/> : <Link href={`/sign-in?redirect=/blog/${slug}`}><p>Please sign in to comment</p></Link>}
+      {user? <CommentForm slug={slug} username={user.username}/> : <Link href={`/sign-in?redirect=/blog/${slug}`}><p className="hover:text-yellow-400">Please sign in to comment</p></Link>}
 
       <h3 className="mt-8 text-blue-400 font-bold ">Comments:</h3>
       <ul>

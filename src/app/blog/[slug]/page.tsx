@@ -1,24 +1,40 @@
 import Comments from "@/components/Comments";
 import { getPostBySlug } from "@/lib/posts";
 import { notFound } from "next/navigation";
+import kv from "@vercel/kv"
+import { Metadata } from "next";
+import Link from "next/link";
 
 type BlogPostParams = {
   params: {
     slug: string;
   };
 };
+export function generateMetadata({ params }: BlogPostParams ) {
+  return {
+    title: `Anna's blog - ${params.slug}`,
+    description: "This was created with the generateMetaData function",
+  };
+}
 
-export default function BlogPost({ params }: BlogPostParams) {
+export default async function BlogPost({ params }: BlogPostParams) {
   const post = getPostBySlug(params.slug);
+  const pageViews = await kv.incr(`views-${params.slug}`)
+  
 
   if (!post) {
     notFound();
   }
 
   return (
-    <div className = "bg-white dark:bg-slate-800">
+    <div >
+      <nav>
+      <Link href={"/blog"}>View all posts</Link>
+      </nav>
       <h1>{post.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.body.html }} className="prose dark:prose-invert" ></div>
+      <p>{post.date}</p>
+      <p>This post has been viewed {pageViews} times</p>
+      <div dangerouslySetInnerHTML={{ __html: post.body.html }} ></div>
     {/* @ts-ignore */}
     <Comments slug={params.slug} />
     </div>

@@ -1,8 +1,15 @@
 import Link from "next/link";
 import { getPosts } from "@/lib/posts";
+import type { Metadata } from "next"
 
-export default function BlogPage() {
+export const metadata: Metadata = {
+  title: "Anna's blog - all posts",
+  description: "Look at all the posts!",
+};
+
+export default async function BlogPage() {
   const posts = getPosts();
+ 
 
   return (
     <div>
@@ -17,6 +24,7 @@ export default function BlogPage() {
         })}
       </ul>
 
+   
       
         {/* {posts.map((post) => {
           let catArr: string[] = [] 

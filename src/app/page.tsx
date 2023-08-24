@@ -1,11 +1,12 @@
 
+import Link from 'next/link'
 import styles from './page.module.css'
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <h1>My posts</h1>
-      <p>Welcome to my blog</p>
+      <h1><Link href={"/blog"}>My posts</Link></h1>
+      <p>Welcome to my Dance Blog</p>
     </main>
   )
 }

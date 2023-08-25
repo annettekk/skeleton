@@ -19,8 +19,8 @@ export default function RootLayout({
   return (
     <ClerkProvider>
     <html lang="en">
-      <body className={inter.className}>
-      <UserButton afterSignOutUrl="/"/>
+      <body className="{inter.className}">
+      <p className="m-8"><UserButton afterSignOutUrl="/"/></p>
         {children}
         </body>
     </html>
